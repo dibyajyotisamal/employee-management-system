@@ -24,7 +24,7 @@ class EmployeeManager:
                 return
         # Check if the provided email is valid
         try:
-            email_info = validate_email(email, check_deliverability=False)
+            validate_email(email, check_deliverability=False)
         except Exception as e:
             print(f"Email is invalid. {str(e)}")
             return
