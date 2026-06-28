@@ -49,3 +49,11 @@ class EmployeeManager:
         self.storage.save_employees(self.employees)
         print("Employee successfully added..!!")
         print(emp)
+
+    def search_employee(self, employee_id):
+        for row in self.employees:
+            if row.employee_id == employee_id:
+                print(row)
+                return row
+        print(f"Employee with ID {employee_id} not found.")
+        return None
