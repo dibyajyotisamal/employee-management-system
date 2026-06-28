@@ -57,3 +57,10 @@ class EmployeeManager:
                 return row
         print(f"Employee with ID {employee_id} not found.")
         return None
+
+    def delete_employee(self, employee_id):
+        employee = self.search_employee(employee_id)
+        if employee:
+            self.employees.remove(employee)
+            self.storage.save_employees(self.employees)
+            print("Successfully removed the employee info.")
