@@ -11,7 +11,7 @@ class Storage:
         # Create a list to store the Employee objects
         emp_objects = list()
         # Check if the file exists or there's any data in it to prevent errors
-        if os.path.exists(self.filename) or not os.path.filesize == 0:
+        if os.path.exists(self.filename) or not os.path.getsize(self.filesize) == 0:
             # Open the file in read mode
             with open(self.filename, mode="r", newline="") as file:
                 # Use the csv.DictReader() method to import all entries as a list of dictionaries
@@ -27,7 +27,7 @@ class Storage:
                     )
                     # Assign the employee objects to emp_objects to return
                     emp_objects.append(emp)
-            return emp_objects
+        return emp_objects
 
     def save_employees(self, employees):
         # Define the fieldnames to be used in the DistWriter method
@@ -49,3 +49,5 @@ class Storage:
                     "salary": employee.salary,
                 }
                 writer.writerow(emp)
+                # Note: full rewrite on every save is intentional for simplicity.
+                # For large datasets, consider append-only writes with indexed lookups.
