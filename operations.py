@@ -18,7 +18,7 @@ class EmployeeManager:
             print("No employees found.")
 
     def add_employee(self, employee_id, name, department, email, salary):
-        """Add a new employee. Returns True if successful."""
+        """Add a new employee."""
         # Check if the employeeID is already present
         for employee in self.employees:
             if employee.employee_id == employee_id:
@@ -60,7 +60,7 @@ class EmployeeManager:
         return None
 
     def delete_employee(self, employee_id):
-        """Delete employee by ID. Returns True if found and deleted."""
+        """Delete employee by ID."""
         employee = self.search_employee(employee_id)
         if employee:
             self.employees.remove(employee)
@@ -72,11 +72,12 @@ class EmployeeManager:
     def update_employee(
         self, employee_id, name=None, department=None, email=None, salary=None
     ):
+        """Update employee attributes by ID"""
         emp = self.search_employee(employee_id)
         # If the search_employee method does not return an Employee object print and exit
         if not emp:
             print("Employee not found.")
-            return
+            return None
         # -------VALIDATE ALL INPUTS--------------
         # If email is provided, check if its valid first, then update the object
         if email:
@@ -115,3 +116,5 @@ class EmployeeManager:
 
         # SAVE THE UPDATED EMPLOYEES LIST
         self.storage.save_employees(self.employees)
+        print("Employee data updated successfully.")
+        return True
