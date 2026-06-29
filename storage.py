@@ -41,13 +41,7 @@ class Storage:
             writer.writeheader()
             # Go through the list of employee objects, convert the objects into a dictionary, and write to the file
             for employee in employees:
-                emp = {
-                    "employee_id": employee.employee_id,
-                    "name": employee.name,
-                    "department": employee.department,
-                    "email": employee.email,
-                    "salary": employee.salary,
-                }
+                emp = employee.to_dict()
                 writer.writerow(emp)
                 # Note: full rewrite on every save is intentional for simplicity.
                 # For large datasets, consider append-only writes with indexed lookups.
