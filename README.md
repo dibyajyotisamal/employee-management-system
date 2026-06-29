@@ -24,8 +24,8 @@ employee-management-system/
 ├── README.md
 ├── requirements.txt
 ├── employee.py          # Employee data model
-├── storage.py           # CSV persistence layer
-├── operations.py        # Business logic (EmployeeManager)
+├── storage.py           # CSV management Layer
+├── operations.py        # Data Manipulation Layer (EmployeeManager)
 └── main.py              # CLI interface
 
 ## Setup
