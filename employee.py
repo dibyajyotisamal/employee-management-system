@@ -12,3 +12,12 @@ class Employee:
             f"Department: {self.department}, Email: {self.email}, "
             f"Salary: {self.salary})"
         )
+
+    def to_dict(self):
+        return {
+            "employee_id": self.employee_id,
+            "name": self.name,
+            "department": self.department,
+            "email": self.email,
+            "salary": self.salary,
+        }

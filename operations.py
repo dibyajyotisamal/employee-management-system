@@ -9,6 +9,13 @@ class EmployeeManager:
         self.storage = Storage(self.filename)
         self.employees = self.storage.load_employees()
 
+    def _find_employee(self, employee_id):
+        """INTERNAL USE: Returns live reference of employee object for modification."""
+        for employee in self.employees:
+            if employee.employee_id == employee_id:
+                return employee
+        return None
+
     def list_employees(self):
         """Return list of all employees."""
         if len(self.employees):
@@ -53,15 +60,16 @@ class EmployeeManager:
         print(emp)
 
     def search_employee(self, employee_id):
-        """Find employee by ID. Returns Employee or None."""
-        for employee in self.employees:
-            if employee.employee_id == employee_id:
-                return employee
+        """Calls _find_employee function. Returns dictionary containing all employee details"""
+        emp = self._find_employee(employee_id)
+        if emp:
+            return emp.to_dict()
+        print(f"Employee with ID {employee_id} not found.")
         return None
 
     def delete_employee(self, employee_id):
         """Delete employee by ID."""
-        employee = self.search_employee(employee_id)
+        employee = self._find_employee(employee_id)
         if employee:
             self.employees.remove(employee)
             self.storage.save_employees(self.employees)
@@ -73,8 +81,8 @@ class EmployeeManager:
         self, employee_id, name=None, department=None, email=None, salary=None
     ):
         """Update employee attributes by ID"""
-        emp = self.search_employee(employee_id)
-        # If the search_employee method does not return an Employee object print and exit
+        emp = self._find_employee(employee_id)
+        # If the _find_employee method does not return an Employee object print and exit
         if not emp:
             print("Employee not found.")
             return None
