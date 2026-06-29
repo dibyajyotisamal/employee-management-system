@@ -32,7 +32,7 @@ employee-management-system/
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone "https://github.com/dibyajyotisamal/employee-management-system"
 cd employee-management-system
 
 # Create virtual environment
