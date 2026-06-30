@@ -67,7 +67,18 @@ python main.py
 
 ## Demo
 
-![Add Employee] (https://github.com/dibyajyotisamal/employee-management-system/blob/main/demo-video/add_employee.gif)
+#### Add Employee
+![Add Employee](demo-video/add_employee.gif)
+
+#### List Employees
+![List Employees](demo-video/search_employee.gif)
+
+#### Update Employee
+![Update Employee](demo-video/update_employee.gif)
+
+#### Delete Employee
+![Delete Employee](demo-video/delete_employee.gif)
+
 
 ## Architecture Highlights
 
