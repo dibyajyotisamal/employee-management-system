@@ -65,6 +65,10 @@ python main.py
 |5|Delete Employee|
 |6|Exit|
 
+## Demo
+
+![Add Employee] (https://github.com/dibyajyotisamal/employee-management-system/blob/main/demo-video/add_employee.gif)
+
 ## Architecture Highlights
 
 - Data model (employee.py), storage (storage.py), business logic (operations.py), and UI (main.py) are decoupled
