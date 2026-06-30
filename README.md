@@ -20,6 +20,11 @@ A command-line employee management system built with Python and CSV file storage
 ## Project Structure
 
 employee-management-system/
+├── demo-video/
+│   ├── add_employee.gif
+│   ├── search_employee.gif
+│   ├── update_employee.gif
+│   └── delete_employee.gif
 ├── .gitignore
 ├── README.md
 ├── requirements.txt
@@ -71,7 +76,7 @@ python main.py
 ![Add Employee](demo-video/add_employee.gif)
 
 #### List Employees
-![List Employees](demo-video/search_employee.gif)
+![Search Employee](demo-video/search_employee.gif)
 
 #### Update Employee
 ![Update Employee](demo-video/update_employee.gif)
