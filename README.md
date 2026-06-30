@@ -24,15 +24,15 @@ employee-management-system/
 ├── README.md
 ├── requirements.txt
 ├── employee.py          # Employee data model
-├── storage.py           # CSV persistence layer
-├── operations.py        # Business logic (EmployeeManager)
+├── storage.py           # CSV management Layer
+├── operations.py        # Data Manipulation Layer (EmployeeManager)
 └── main.py              # CLI interface
 
 ## Setup
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone "https://github.com/dibyajyotisamal/employee-management-system"
 cd employee-management-system
 
 # Create virtual environment
