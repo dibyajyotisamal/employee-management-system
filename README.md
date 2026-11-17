@@ -18,7 +18,7 @@ A command-line employee management system built with Python and CSV file storage
 - `email-validator` for email validation
 
 ## Project Structure
-
+```
 employee-management-system/
 ├── demo-video/
 │   ├── add_employee.gif
@@ -32,6 +32,7 @@ employee-management-system/
 ├── storage.py           # CSV management Layer
 ├── operations.py        # Data Manipulation Layer (EmployeeManager)
 └── main.py              # CLI interface
+```
 
 ## Setup
 
